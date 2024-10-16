@@ -2,6 +2,7 @@
 
 A simple and efficient **Port Scanner** built with Python and Flask, designed to identify open ports on a given IP address. This mini project serves as a practical demonstration of network security concepts and the basics of web development with Flask.
 
+![Wallpaper](./docs/wallpaper.webp)
 ## Features
 
 - **Scan Ports**: Check for open ports on any specified IP address.
