@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PyScan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Port Scanner</h1>
+    <form method="POST">
+        <label for="ip">Endereço IP:</label>
+        <input type="text" id="ip" name="ip" required>
+
+        <label for="start_port">Start Port:</label>
+        <input type="number" id="start_port" name="start_port" required>
+
+        <label for="end_port">End Port:</label>
+        <input type="number" id="end_port" name="end_port" required>
+
+        <button type="submit">Scan</button>
+    </form>
+
+    {% if open_ports %}
+        <h2>Open ports:</h2>
+        <ul>
+            {% for port in open_ports %}
+                <li>Port: {{ port }}</li>
+            {% endfor %}
+        </ul>
+    {% elif open_ports is not none %}
+        <p>None open port found :(</p>
+    {% endif %}
+</body>
+</html>
